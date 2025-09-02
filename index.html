@@ -1,214 +1,366 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Alwin Jose George — Portfolio</title>
+  <meta name="description" content="Alwin Jose George — BTech Student | Image Processing | AI | Web & Mobile projects" />
+  <link rel="icon" href="data:;base64,iVBORw0KGgo=" />
+  <style>
+    /* ----------------- Base / Reset ----------------- */
+    :root{
+      --bg:#070916;
+      --card:#0e1624;
+      --muted:#9aa4b2;
+      --accent1:#7c3aed; /* purple */
+      --accent2:#ff6b6b; /* coral */
+      --glass: rgba(255,255,255,0.04);
+      --glass-2: rgba(255,255,255,0.03);
+      --radius:14px;
+      color-scheme: dark;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      background: radial-gradient(1200px 600px at 10% 10%, rgba(124,58,237,0.12), transparent),
+                  linear-gradient(180deg,var(--bg), #041021 140%);
+      color:#e6eef6;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      line-height:1.4;
+    }
+    a{color:var(--accent1);text-decoration:none}
+    img{max-width:100%;display:block}
 
-  <!-- Google Font -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    /* ----------------- Layout ----------------- */
+    .container{max-width:1100px;margin:28px auto;padding:24px}
+    header{display:flex;align-items:center;justify-content:space-between;gap:18px}
+    .brand{display:flex;align-items:center;gap:12px}
+    .logo{width:56px;height:56px;border-radius:12px;background:linear-gradient(135deg,var(--accent1),var(--accent2));display:flex;align-items:center;justify-content:center;font-weight:700;font-size:20px;box-shadow:0 6px 20px rgba(2,6,23,0.6)}
+    nav{display:flex;gap:14px;align-items:center}
+    .btn{display:inline-flex;gap:8px;align-items:center;padding:8px 12px;border-radius:10px;background:var(--glass);border:1px solid rgba(255,255,255,0.03);cursor:pointer}
 
-  <link rel="stylesheet" href="style.css" />
+    /* ----------------- Hero ----------------- */
+    .hero{display:grid;grid-template-columns:1fr 420px;gap:30px;margin-top:28px;align-items:center}
+    .hi{font-size:28px;font-weight:800;margin:0}
+    .lead{color:var(--muted);max-width:60ch;margin-top:12px}
+    .cta{margin-top:18px;display:flex;gap:12px}
+
+    .card{background:linear-gradient(180deg,var(--card),#071227);padding:18px;border-radius:var(--radius);box-shadow:0 8px 30px rgba(2,6,23,0.6);border:1px solid rgba(255,255,255,0.03)}
+
+    /* ----------------- Stats ----------------- */
+    .stats{display:flex;gap:12px;margin-top:18px}
+    .stat{flex:1;padding:10px;border-radius:12px;background:var(--glass-2);text-align:center}
+    .stat .n{font-weight:700;font-size:18px}
+    .stat .t{font-size:12px;color:var(--muted)}
+
+    /* ----------------- Sections ----------------- */
+    section{margin-top:36px}
+    h2{font-size:20px;margin:0 0 12px 0}
+    p.muted{color:var(--muted);margin:0}
+
+    /* ----------------- Projects ----------------- */
+    .projects{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+    .project{display:flex;flex-direction:column;gap:10px;padding:14px;border-radius:12px;background:linear-gradient(180deg,rgba(255,255,255,0.02),transparent);border:1px solid rgba(255,255,255,0.03)}
+    .project .meta{display:flex;justify-content:space-between;align-items:center}
+    .tags{display:flex;gap:8px;flex-wrap:wrap}
+    .tag{font-size:12px;padding:6px 8px;border-radius:8px;background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.02)}
+
+    /* ----------------- Gallery ----------------- */
+    .gallery{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+    .gallery .item{height:110px;border-radius:10px;background-size:cover;background-position:center;cursor:pointer;overflow:hidden}
+
+    /* ----------------- Contact ----------------- */
+    .contact-grid{display:grid;grid-template-columns:1fr 360px;gap:18px}
+    .form input,.form textarea{width:100%;padding:10px;margin-top:6px;border-radius:8px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:inherit}
+    .form label{font-size:13px;color:var(--muted)}
+    .form button{margin-top:12px;padding:10px 14px;border-radius:10px;background:linear-gradient(90deg,var(--accent1),var(--accent2));border:none;color:white;cursor:pointer}
+
+    /* ----------------- Footer ----------------- */
+    footer{margin-top:36px;text-align:center;color:var(--muted);font-size:13px;padding:24px}
+
+    /* ----------------- Responsive ----------------- */
+    @media (max-width:980px){
+      .hero{grid-template-columns:1fr}
+      .projects{grid-template-columns:1fr}
+      .gallery{grid-template-columns:repeat(2,1fr)}
+      .contact-grid{grid-template-columns:1fr}
+      nav{display:none}
+    }
+
+    /* ----------------- Utilities & small niceties ----------------- */
+    .small{font-size:13px;color:var(--muted)}
+    .muted-2{color:rgba(255,255,255,0.6)}
+    .pill{padding:6px 10px;border-radius:999px;background:rgba(255,255,255,0.02);font-size:13px}
+
+    /* subtle hover */
+    .project:hover{transform:translateY(-6px);transition:transform .25s}
+    .card, .project, .gallery .item{transition:box-shadow .25s,transform .2s}
+
+    /* modal */
+    .modal{position:fixed;inset:0;background:rgba(2,6,23,0.65);display:flex;align-items:center;justify-content:center;padding:20px;z-index:999}
+    .modal .modal-card{width:100%;max-width:900px;border-radius:12px;padding:18px;background:linear-gradient(180deg,#071427,#06101a)}
+
+  </style>
 </head>
 <body>
-  <!-- NAVBAR -->
-  <header class="nav-wrap">
-    <div class="nav container">
-      <div class="brand">AJG</div>
-      <nav class="nav-links" role="navigation" aria-label="Main Navigation">
-        <a href="#home">Home</a>
-        <a href="#about">About</a>
-        <a href="#skills">Skills</a>
-        <a href="#projects">Projects</a>
-        <a href="#events">Events</a>
-        <a href="#contact">Contact</a>
+  <div class="container">
+    <header>
+      <div class="brand">
+        <div class="logo">A</div>
+        <div>
+          <div style="font-weight:800;font-size:16px">Alwin Jose George</div>
+          <div class="small">BTech (KTU) • Image Processing • AI</div>
+        </div>
+      </div>
+
+      <nav aria-label="Main navigation">
+        <a class="btn" href="#projects">Projects</a>
+        <a class="btn" href="#gallery">Gallery</a>
+        <a class="btn" href="#contact">Contact</a>
       </nav>
-      <a class="cta" href="#contact">Let's Connect</a>
-      <button class="burger" aria-label="Toggle menu" aria-expanded="false">
-        <span></span><span></span><span></span>
-      </button>
-    </div>
-  </header>
+    </header>
 
-  <!-- HERO -->
-  <main>
-    <section id="home" class="hero">
-      <div class="hero-content container">
-        <h1 class="hero-title">ALWIN JOSE GEORGE</h1>
-        <h3 class="hero-sub">Computer Science Engineer | <span>AI Enthusiast</span></h3>
-        <p class="hero-desc">Exploring the frontiers of technology with passion for innovation and excellence.</p>
-        <a href="#projects" class="btn-primary">Explore My Journey</a>
-      </div>
-      <div class="hero-foreground"></div>
-    </section>
+    <!-- HERO -->
+    <main>
+      <section class="hero">
+        <div>
+          <h1 class="hi">Hi — I’m Alwin. I build image-first AI projects & modern web apps.</h1>
+          <p class="lead">I’m a BTech 1st-year at KTU from Poonjar, Kerala. I focus on image processing, computer vision and making polished, usable products. My Plan B: start a tech business and lead a team to deliver real solutions.</p>
 
-    <!-- ABOUT (brief) -->
-    <section id="about" class="about container">
-      <div class="about-card">
-        <h2>About Me</h2>
-        <p>Hi — I'm Alwin. I build web apps, explore image processing and ML, and love clean UI/UX design. I enjoy hackathons, workshops and building practical AI projects.</p>
-      </div>
-    </section>
+          <div class="cta">
+            <a class="btn" href="#projects">See Projects</a>
+            <a class="btn" href="/resume.pdf" download>Download Resume</a>
+          </div>
 
-    <!-- SKILLS -->
-    <section id="skills" class="skills container">
-      <h2 class="section-title">Skills</h2>
-      <div class="skill-grid">
-        <div class="skill-card">
-          <h3>Programming</h3>
-          <div class="skill-line"><span>Python</span><div class="bar"><div data-percent="80" class="fill"></div></div></div>
-          <div class="skill-line"><span>C / C++</span><div class="bar"><div data-percent="70" class="fill"></div></div></div>
-          <div class="skill-line"><span>JavaScript</span><div class="bar"><div data-percent="75" class="fill"></div></div></div>
-        </div>
-
-        <div class="skill-card">
-          <h3>Web Technologies</h3>
-          <div class="skill-line"><span>React.js</span><div class="bar"><div data-percent="85" class="fill"></div></div></div>
-          <div class="skill-line"><span>HTML / CSS</span><div class="bar"><div data-percent="92" class="fill"></div></div></div>
-          <div class="skill-line"><span>Node.js</span><div class="bar"><div data-percent="65" class="fill"></div></div></div>
-        </div>
-
-        <div class="skill-card">
-          <h3>AI & Data</h3>
-          <div class="skill-line"><span>Machine Learning</span><div class="bar"><div data-percent="75" class="fill"></div></div></div>
-          <div class="skill-line"><span>Image Processing</span><div class="bar"><div data-percent="80" class="fill"></div></div></div>
-          <div class="skill-line"><span>Data Analysis</span><div class="bar"><div data-percent="70" class="fill"></div></div></div>
-        </div>
-      </div>
-    </section>
-
-    <!-- PROJECTS -->
-    <section id="projects" class="projects container">
-      <h2 class="section-title">Featured Projects</h2>
-      <div class="projects-grid">
-        <article class="project-card">
-          <div class="thumb" aria-hidden="true"><div class="badge">Web Development</div></div>
-          <h3>Modern Photo Gallery Website</h3>
-          <p>A responsive gallery with advanced filtering, lightbox and smooth animations — built with modern frontend tools.</p>
-        </article>
-
-        <article class="project-card">
-          <div class="thumb" aria-hidden="true green"><div class="badge">Mobile App</div></div>
-          <h3>Eco Travel Mate</h3>
-          <p>Hackathon-winning sustainable travel companion app with carbon tracking and greener routing suggestions.</p>
-        </article>
-
-        <article class="project-card">
-          <div class="thumb" aria-hidden="true blue"><div class="badge">AI / ML</div></div>
-          <h3>Smart Attendance System</h3>
-          <p>AI-powered attendance system using face recognition and IPR concepts, with analytics and reporting.</p>
-        </article>
-      </div>
-    </section>
-
-    <!-- EVENTS / TIMELINE -->
-    <section id="events" class="events container">
-      <h2 class="section-title">Events & Workshops</h2>
-      <p class="muted">Continuous learning through workshops, hackathons and technical events</p>
-
-      <div class="timeline-wrap">
-        <div class="timeline-line" aria-hidden="true"></div>
-
-        <div class="timeline-item left">
-          <div class="dot"></div>
-          <div class="card">
-            <div class="meta">2024</div>
-            <h4>3D Gaming Development Workshop</h4>
-            <p>NIT Calicut — learned Unity, graphics programming and game physics.</p>
+          <div class="stats" aria-hidden="true">
+            <div class="stat"><div class="n">8+</div><div class="t">Projects</div></div>
+            <div class="stat"><div class="n">3+</div><div class="t">Workshops</div></div>
+            <div class="stat"><div class="n">TATUA</div><div class="t">3D Gaming Dev</div></div>
           </div>
         </div>
 
-        <div class="timeline-item right">
-          <div class="dot"></div>
-          <div class="card">
-            <div class="meta">2024</div>
-            <h4>Cybersecurity Workshop - Tesseract 8.0</h4>
-            <p>SJCET Palai — ethical hacking, penetration testing and network security protocols.</p>
-          </div>
-        </div>
-
-        <div class="timeline-item left">
-          <div class="dot"></div>
-          <div class="card">
-            <div class="meta">2024</div>
-            <h4>Hackathon — Eco Travel Mate</h4>
-            <p>1st Place — developed sustainable travel app with trip tracking and carbon footprint features.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- STATS -->
-    <section class="stats container">
-      <div class="stat">
-        <div class="stat-num">15+</div>
-        <div class="stat-label">Workshops Attended</div>
-      </div>
-      <div class="stat">
-        <div class="stat-num">3</div>
-        <div class="stat-label">Awards Won</div>
-      </div>
-      <div class="stat">
-        <div class="stat-num">2024</div>
-        <div class="stat-label">Active Year</div>
-      </div>
-      <div class="stat">
-        <div class="stat-num">5+</div>
-        <div class="stat-label">Venues Visited</div>
-      </div>
-    </section>
-
-    <!-- CONTACT -->
-    <section id="contact" class="contact container">
-      <h2 class="section-title">Get In Touch</h2>
-      <div class="contact-grid">
-        <form id="contactForm" class="contact-form" novalidate>
-          <label>
-            <span>Your Name</span>
-            <input name="name" required placeholder="Your name">
-          </label>
-          <label>
-            <span>Your Email</span>
-            <input name="email" type="email" required placeholder="you@example.com">
-          </label>
-          <label>
-            <span>Your Message</span>
-            <textarea name="message" rows="6" placeholder="Let's build something great..."></textarea>
-          </label>
-          <div class="form-actions">
-            <button type="submit" class="btn-primary">Send Message</button>
-          </div>
-        </form>
-
-        <aside class="contact-info">
-          <div class="info-card">
-            <h3>Contact Information</h3>
-            <ul>
-              <li><svg class="icon" viewBox="0 0 24 24"><path d="M2 5.5v13A2.5 2.5 0 0 0 4.5 21h15A2.5 2.5 0 0 0 22 18.5v-13A2.5 2.5 0 0 0 19.5 3h-15A2.5 2.5 0 0 0 2 5.5z" /></svg><span>alwin.jose.george@example.com</span></li>
-              <li><svg class="icon" viewBox="0 0 24 24"><path d="M22 16.92v3A2 2 0 0 1 20 22a19 19 0 0 1-8.63-2.44A19 19 0 0 1 3 9a2 2 0 0 1 2-2h3.09a2 2 0 0 1 2 1.72c.12 1.01.5 2.02 1.09 2.9a2 2 0 0 1-.45 2.72L8.09 16.91"/></svg><span>+91 98765 43210</span></li>
-              <li><svg class="icon" viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z" /></svg><span>Poonjar, Kerala, India</span></li>
-            </ul>
-          </div>
-          <div class="info-card small">
-            <h4>Connect With Me</h4>
-            <div class="socials">
-              <a href="#" aria-label="GitHub" title="GitHub">GitHub</a>
-              <a href="#" aria-label="LinkedIn" title="LinkedIn">LinkedIn</a>
-              <a href="#" aria-label="Email" title="Email">Email</a>
+        <aside class="card">
+          <div style="height:220px;border-radius:12px;background-image:url('https://source.unsplash.com/collection/190727/800x600');background-size:cover;background-position:center"></div>
+          <div style="display:flex;justify-content:space-between;margin-top:12px;align-items:center">
+            <div>
+              <div class="small">Based in</div>
+              <div style="font-weight:600">Poonjar, Kerala</div>
+            </div>
+            <div style="text-align:right">
+              <div class="small">Looking for</div>
+              <div style="font-weight:600">Internships • Collaborations</div>
             </div>
           </div>
         </aside>
-      </div>
-    </section>
+      </section>
 
-    <!-- FOOTER -->
-    <footer class="footer">
-      <div class="container">
-        <p>© <span id="year"></span> Alwin Jose George — All rights reserved.</p>
-      </div>
-    </footer>
-  </main>
+      <!-- ABOUT -->
+      <section id="about">
+        <div class="card">
+          <h2>About</h2>
+          <p class="muted">I enjoy building web & mobile projects. I’ve worked on AI-enabled attendance systems, media galleries, and sustainable mobility apps like Eco Travel Mate and GreenPath. I also actively participate in hackathons and workshops. I prefer presenting in Malayalam-English mix and keep slides short and confident.</p>
+          <div style="display:flex;gap:12px;margin-top:12px;flex-wrap:wrap">
+            <div class="pill">BTech, KTU</div>
+            <div class="pill">C • Python • React</div>
+            <div class="pill">Image Processing • OpenCV</div>
+            <div class="pill">GitHub: alwinjosegeorge</div>
+          </div>
+        </div>
+      </section>
 
-  <script src="script.js"></script>
+      <!-- PROJECTS -->
+      <section id="projects">
+        <h2>Selected Projects</h2>
+        <div class="projects" style="margin-top:12px">
+
+          <article class="project">
+            <div class="meta">
+              <div>
+                <div style="font-weight:700">Eco Travel Mate</div>
+                <div class="small">Smart mobility & carbon-tracking app</div>
+              </div>
+              <a class="small" href="https://github.com/alwinjosegeorge/Eco-Travel-Mate" target="_blank">View Repo</a>
+            </div>
+            <p class="muted">Trip detection, personalized GreenPath Score, weekly challenges, family leaderboards and Live Air Quality integration.</p>
+            <div class="tags" aria-hidden>
+              <div class="tag">React</div>
+              <div class="tag">PWA</div>
+              <div class="tag">OpenWeather API</div>
+            </div>
+          </article>
+
+          <article class="project">
+            <div class="meta">
+              <div>
+                <div style="font-weight:700">GreenPath</div>
+                <div class="small">Nudges users to greener transport</div>
+              </div>
+              <a class="small" href="https://github.com/alwinjosegeorge/GreenPath" target="_blank">View Repo</a>
+            </div>
+            <p class="muted">Personalized suggestions to walk, cycle or take public transport. Simple UX with scoring and analytics.</p>
+            <div class="tags">
+              <div class="tag">React Native</div>
+              <div class="tag">Analytics</div>
+              <div class="tag">Sustainability</div>
+            </div>
+          </article>
+
+          <article class="project">
+            <div class="meta">
+              <div>
+                <div style="font-weight:700">Alwin's Modern Gallery</div>
+                <div class="small">Responsive photo & video gallery</div>
+              </div>
+              <a class="small" href="https://github.com/alwinjosegeorge/Alwins-modern-gallery" target="_blank">View Repo</a>
+            </div>
+            <p class="muted">A modern gallery with MP4 support, masonry layout and responsive media pages.</p>
+            <div class="tags">
+              <div class="tag">Next.js</div>
+              <div class="tag">Tailwind</div>
+              <div class="tag">Media</div>
+            </div>
+          </article>
+
+          <article class="project">
+            <div class="meta">
+              <div>
+                <div style="font-weight:700">Smart Attendance System Using AI Cameras</div>
+                <div class="small">IPR class project</div>
+              </div>
+              <div class="small">Private</div>
+            </div>
+            <p class="muted">Face detection for attendance using OpenCV with privacy-oriented data handling and reporting.</p>
+            <div class="tags">
+              <div class="tag">Computer Vision</div>
+              <div class="tag">Python</div>
+              <div class="tag">OpenCV</div>
+            </div>
+          </article>
+
+        </div>
+      </section>
+
+      <!-- GALLERY -->
+      <section id="gallery">
+        <h2>Gallery</h2>
+        <p class="muted">Click images to preview. I can replace these placeholders with your photos and MP4 videos.</p>
+        <div class="gallery" style="margin-top:12px">
+          <div class="item" style="background-image:url('https://source.unsplash.com/random/800x600?sig=1')" data-full="https://source.unsplash.com/random/1600x1200?sig=1"></div>
+          <div class="item" style="background-image:url('https://source.unsplash.com/random/800x600?sig=2')" data-full="https://source.unsplash.com/random/1600x1200?sig=2"></div>
+          <div class="item" style="background-image:url('https://source.unsplash.com/random/800x600?sig=3')" data-full="https://source.unsplash.com/random/1600x1200?sig=3"></div>
+          <div class="item" style="background-image:url('https://source.unsplash.com/random/800x600?sig=4')" data-full="https://source.unsplash.com/random/1600x1200?sig=4"></div>
+          <div class="item" style="background-image:url('https://source.unsplash.com/random/800x600?sig=5')" data-full="https://source.unsplash.com/random/1600x1200?sig=5"></div>
+          <div class="item" style="background-image:url('https://source.unsplash.com/random/800x600?sig=6')" data-full="https://source.unsplash.com/random/1600x1200?sig=6"></div>
+          <div class="item" style="background-image:url('https://source.unsplash.com/random/800x600?sig=7')" data-full="https://source.unsplash.com/random/1600x1200?sig=7"></div>
+          <div class="item" style="background-image:url('https://source.unsplash.com/random/800x600?sig=8')" data-full="https://source.unsplash.com/random/1600x1200?sig=8"></div>
+        </div>
+      </section>
+
+      <!-- CONTACT -->
+      <section id="contact">
+        <h2>Contact</h2>
+        <div class="contact-grid" style="margin-top:12px">
+          <div class="card">
+            <div style="font-weight:700">Get in touch</div>
+            <p class="muted" style="margin-top:8px">Plathottam (H), Payyanithottam, Poonjar South P.O., Kottayam, Kerala – 686582</p>
+            <p class="muted" style="margin-top:6px">Email: <a href="mailto:alwin@example.com">alwin@example.com</a></p>
+            <p class="muted" style="margin-top:6px">GitHub: <a href="https://github.com/alwinjosegeorge">github.com/alwinjosegeorge</a></p>
+            <div style="margin-top:12px"><span class="pill">Open to internships</span></div>
+          </div>
+
+          <form class="card form" id="contactForm">
+            <label for="name">Name</label>
+            <input id="name" name="name" placeholder="Your name" required />
+            <label for="email">Email</label>
+            <input id="email" name="email" placeholder="you@mail.com" required />
+            <label for="msg">Message</label>
+            <textarea id="msg" name="msg" rows="6" placeholder="Write a quick message"></textarea>
+            <button type="submit">Send Message</button>
+            <div id="formResult" class="small" style="margin-top:8px;color:var(--muted)"></div>
+          </form>
+        </div>
+      </section>
+
+      <footer>
+        © <span id="year"></span> Alwin Jose George • Built with care
+      </footer>
+
+    </main>
+
+  </div>
+
+  <!-- Modal (image preview) -->
+  <div id="modal" style="display:none" class="modal" role="dialog" aria-modal="true">
+    <div class="modal-card">
+      <div style="display:flex;justify-content:space-between;align-items:center">
+        <div style="font-weight:700">Preview</div>
+        <button id="closeModal" class="btn">Close</button>
+      </div>
+      <div style="margin-top:12px">
+        <img id="modalImg" src="" alt="preview" style="width:100%;border-radius:8px;max-height:70vh;object-fit:contain" />
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // small helper
+    const $ = (sel, el=document)=> el.querySelector(sel);
+    const $$ = (sel, el=document)=> Array.from(el.querySelectorAll(sel));
+
+    // set year
+    document.getElementById('year').innerText = new Date().getFullYear();
+
+    // gallery modal
+    const items = $$('.gallery .item');
+    const modal = document.getElementById('modal');
+    const modalImg = document.getElementById('modalImg');
+    const closeModal = document.getElementById('closeModal');
+
+    items.forEach(it=>{
+      it.addEventListener('click', ()=>{
+        const src = it.getAttribute('data-full') || window.getComputedStyle(it).backgroundImage.slice(5,-2);
+        modalImg.src = src;
+        modal.style.display = 'flex';
+        document.body.style.overflow = 'hidden';
+      })
+    });
+    closeModal.addEventListener('click', ()=>{ modal.style.display='none'; document.body.style.overflow=''; modalImg.src=''; });
+    modal.addEventListener('click', (e)=>{ if(e.target===modal) { modal.style.display='none'; document.body.style.overflow=''; modalImg.src=''; } });
+
+    // contact form (demo; replace with real endpoint)
+    const form = document.getElementById('contactForm');
+    const result = document.getElementById('formResult');
+    form.addEventListener('submit', (e)=>{
+      e.preventDefault();
+      const name = form.name.value.trim();
+      const email = form.email.value.trim();
+      const msg = form.msg.value.trim();
+      if(!name||!email){ result.innerText='Please enter name and email.'; return; }
+      // fake sending
+      result.style.color = 'var(--muted)';
+      result.innerText = 'Sending...';
+      setTimeout(()=>{
+        result.style.color = 'lightgreen';
+        result.innerText = 'Message sent! I will reply soon.';
+        form.reset();
+      },900);
+    });
+
+    // keyboard close (escape)
+    document.addEventListener('keydown', (e)=>{ if(e.key==='Escape'){ if(modal.style.display==='flex'){ modal.style.display='none'; document.body.style.overflow=''; modalImg.src=''; } } });
+
+    // progressive enhancement: if JS disabled, gallery still visible as background images
+
+    /*
+      NOTES for you (developer):
+      - Replace /resume.pdf with your real resume file in the same folder.
+      - Replace gallery placeholders with your actual images or video thumbnails. For MP4 previews you can open a video player instead of an img in modal.
+      - To add Live AQI widget: call OpenWeather or other API from server or client. I can add that code if you want.
+      - To deploy: upload this file and resume.pdf to any static host (Netlify, Vercel, GitHub Pages).
+    */
+  </script>
 </body>
 </html>
