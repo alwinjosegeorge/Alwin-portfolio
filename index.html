@@ -1,120 +1,214 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Alwin Jose George | Portfolio</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Alwin Jose George — Portfolio</title>
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <!-- Navbar -->
-  <header class="navbar">
-    <div class="logo">AJG</div>
-    <nav>
-      <ul>
-        <li><a href="#home">Home</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#skills">Skills</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#events">Events</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-    </nav>
-    <a href="#contact" class="btn">Let’s Connect</a>
+  <!-- NAVBAR -->
+  <header class="nav-wrap">
+    <div class="nav container">
+      <div class="brand">AJG</div>
+      <nav class="nav-links" role="navigation" aria-label="Main Navigation">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#events">Events</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <a class="cta" href="#contact">Let's Connect</a>
+      <button class="burger" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
   </header>
 
-  <!-- Hero -->
-  <section id="home" class="hero">
-    <h1>ALWIN JOSE GEORGE</h1>
-    <h2>Computer Science Engineer | AI Enthusiast</h2>
-    <p>Exploring the frontiers of technology with passion for innovation and excellence.</p>
-    <button class="btn">Explore My Journey</button>
-  </section>
+  <!-- HERO -->
+  <main>
+    <section id="home" class="hero">
+      <div class="hero-content container">
+        <h1 class="hero-title">ALWIN JOSE GEORGE</h1>
+        <h3 class="hero-sub">Computer Science Engineer | <span>AI Enthusiast</span></h3>
+        <p class="hero-desc">Exploring the frontiers of technology with passion for innovation and excellence.</p>
+        <a href="#projects" class="btn-primary">Explore My Journey</a>
+      </div>
+      <div class="hero-foreground"></div>
+    </section>
 
-  <!-- Skills -->
-  <section id="skills" class="skills">
-    <h2>Skills</h2>
-    <div class="skill-box">
-      <h3>Programming</h3>
-      <p>Python</p><div class="bar"><span style="width:80%"></span></div>
-      <p>C/C++</p><div class="bar"><span style="width:70%"></span></div>
-      <p>JavaScript</p><div class="bar"><span style="width:75%"></span></div>
-    </div>
-    <div class="skill-box">
-      <h3>Web Technologies</h3>
-      <p>React.js</p><div class="bar"><span style="width:85%"></span></div>
-      <p>HTML/CSS</p><div class="bar"><span style="width:90%"></span></div>
-      <p>Node.js</p><div class="bar"><span style="width:65%"></span></div>
-    </div>
-    <div class="skill-box">
-      <h3>AI & Data</h3>
-      <p>Machine Learning</p><div class="bar"><span style="width:75%"></span></div>
-      <p>Image Processing</p><div class="bar"><span style="width:80%"></span></div>
-      <p>Data Analysis</p><div class="bar"><span style="width:70%"></span></div>
-    </div>
-  </section>
+    <!-- ABOUT (brief) -->
+    <section id="about" class="about container">
+      <div class="about-card">
+        <h2>About Me</h2>
+        <p>Hi — I'm Alwin. I build web apps, explore image processing and ML, and love clean UI/UX design. I enjoy hackathons, workshops and building practical AI projects.</p>
+      </div>
+    </section>
 
-  <!-- Projects -->
-  <section id="projects" class="projects">
-    <h2>Featured Projects</h2>
-    <div class="card">
-      <h3>Modern Photo Gallery Website</h3>
-      <p>A responsive photo gallery with advanced filtering, lightbox functionality, and smooth animations.</p>
-    </div>
-    <div class="card">
-      <h3>Eco Travel Mate</h3>
-      <p>Sustainable travel app helping users find eco-friendly options with carbon tracking.</p>
-    </div>
-    <div class="card">
-      <h3>Smart Attendance System</h3>
-      <p>AI-powered system with face recognition, real-time tracking & analytics dashboard.</p>
-    </div>
-  </section>
+    <!-- SKILLS -->
+    <section id="skills" class="skills container">
+      <h2 class="section-title">Skills</h2>
+      <div class="skill-grid">
+        <div class="skill-card">
+          <h3>Programming</h3>
+          <div class="skill-line"><span>Python</span><div class="bar"><div data-percent="80" class="fill"></div></div></div>
+          <div class="skill-line"><span>C / C++</span><div class="bar"><div data-percent="70" class="fill"></div></div></div>
+          <div class="skill-line"><span>JavaScript</span><div class="bar"><div data-percent="75" class="fill"></div></div></div>
+        </div>
 
-  <!-- Events -->
-  <section id="events" class="events">
-    <h2>Events & Workshops</h2>
-    <div class="event">
-      <h3>3D Gaming Development Workshop – NIT Calicut</h3>
-      <p>Learned advanced graphics programming, Unity, Unreal Engine.</p>
-    </div>
-    <div class="event">
-      <h3>Cybersecurity Workshop – SJCET Palai</h3>
-      <p>Ethical hacking, penetration testing & security protocols.</p>
-    </div>
-    <div class="event">
-      <h3>Hackathon – Eco Travel Mate</h3>
-      <p>1st Place Winner – Sustainable travel solution with mobile app.</p>
-    </div>
-  </section>
+        <div class="skill-card">
+          <h3>Web Technologies</h3>
+          <div class="skill-line"><span>React.js</span><div class="bar"><div data-percent="85" class="fill"></div></div></div>
+          <div class="skill-line"><span>HTML / CSS</span><div class="bar"><div data-percent="92" class="fill"></div></div></div>
+          <div class="skill-line"><span>Node.js</span><div class="bar"><div data-percent="65" class="fill"></div></div></div>
+        </div>
 
-  <!-- Stats -->
-  <section class="stats">
-    <div class="stat"><h3>15+</h3><p>Workshops Attended</p></div>
-    <div class="stat"><h3>3</h3><p>Awards Won</p></div>
-    <div class="stat"><h3>2024</h3><p>Active Year</p></div>
-    <div class="stat"><h3>5+</h3><p>Venues Visited</p></div>
-  </section>
+        <div class="skill-card">
+          <h3>AI & Data</h3>
+          <div class="skill-line"><span>Machine Learning</span><div class="bar"><div data-percent="75" class="fill"></div></div></div>
+          <div class="skill-line"><span>Image Processing</span><div class="bar"><div data-percent="80" class="fill"></div></div></div>
+          <div class="skill-line"><span>Data Analysis</span><div class="bar"><div data-percent="70" class="fill"></div></div></div>
+        </div>
+      </div>
+    </section>
 
-  <!-- Contact -->
-  <section id="contact" class="contact">
-    <h2>Get In Touch</h2>
-    <form>
-      <input type="text" placeholder="Your Name" required>
-      <input type="email" placeholder="Your Email" required>
-      <textarea placeholder="Your Message"></textarea>
-      <button type="submit" class="btn">Send</button>
-    </form>
-    <div class="info">
-      <p>Email: alwin.jose.george@example.com</p>
-      <p>Phone: +91 98765 43210</p>
-      <p>Location: Kerala, India</p>
-    </div>
-  </section>
+    <!-- PROJECTS -->
+    <section id="projects" class="projects container">
+      <h2 class="section-title">Featured Projects</h2>
+      <div class="projects-grid">
+        <article class="project-card">
+          <div class="thumb" aria-hidden="true"><div class="badge">Web Development</div></div>
+          <h3>Modern Photo Gallery Website</h3>
+          <p>A responsive gallery with advanced filtering, lightbox and smooth animations — built with modern frontend tools.</p>
+        </article>
 
-  <!-- Footer -->
-  <footer>
-    <p>© 2025 Alwin Jose George. All rights reserved.</p>
-  </footer>
+        <article class="project-card">
+          <div class="thumb" aria-hidden="true green"><div class="badge">Mobile App</div></div>
+          <h3>Eco Travel Mate</h3>
+          <p>Hackathon-winning sustainable travel companion app with carbon tracking and greener routing suggestions.</p>
+        </article>
+
+        <article class="project-card">
+          <div class="thumb" aria-hidden="true blue"><div class="badge">AI / ML</div></div>
+          <h3>Smart Attendance System</h3>
+          <p>AI-powered attendance system using face recognition and IPR concepts, with analytics and reporting.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- EVENTS / TIMELINE -->
+    <section id="events" class="events container">
+      <h2 class="section-title">Events & Workshops</h2>
+      <p class="muted">Continuous learning through workshops, hackathons and technical events</p>
+
+      <div class="timeline-wrap">
+        <div class="timeline-line" aria-hidden="true"></div>
+
+        <div class="timeline-item left">
+          <div class="dot"></div>
+          <div class="card">
+            <div class="meta">2024</div>
+            <h4>3D Gaming Development Workshop</h4>
+            <p>NIT Calicut — learned Unity, graphics programming and game physics.</p>
+          </div>
+        </div>
+
+        <div class="timeline-item right">
+          <div class="dot"></div>
+          <div class="card">
+            <div class="meta">2024</div>
+            <h4>Cybersecurity Workshop - Tesseract 8.0</h4>
+            <p>SJCET Palai — ethical hacking, penetration testing and network security protocols.</p>
+          </div>
+        </div>
+
+        <div class="timeline-item left">
+          <div class="dot"></div>
+          <div class="card">
+            <div class="meta">2024</div>
+            <h4>Hackathon — Eco Travel Mate</h4>
+            <p>1st Place — developed sustainable travel app with trip tracking and carbon footprint features.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- STATS -->
+    <section class="stats container">
+      <div class="stat">
+        <div class="stat-num">15+</div>
+        <div class="stat-label">Workshops Attended</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num">3</div>
+        <div class="stat-label">Awards Won</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num">2024</div>
+        <div class="stat-label">Active Year</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num">5+</div>
+        <div class="stat-label">Venues Visited</div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="contact container">
+      <h2 class="section-title">Get In Touch</h2>
+      <div class="contact-grid">
+        <form id="contactForm" class="contact-form" novalidate>
+          <label>
+            <span>Your Name</span>
+            <input name="name" required placeholder="Your name">
+          </label>
+          <label>
+            <span>Your Email</span>
+            <input name="email" type="email" required placeholder="you@example.com">
+          </label>
+          <label>
+            <span>Your Message</span>
+            <textarea name="message" rows="6" placeholder="Let's build something great..."></textarea>
+          </label>
+          <div class="form-actions">
+            <button type="submit" class="btn-primary">Send Message</button>
+          </div>
+        </form>
+
+        <aside class="contact-info">
+          <div class="info-card">
+            <h3>Contact Information</h3>
+            <ul>
+              <li><svg class="icon" viewBox="0 0 24 24"><path d="M2 5.5v13A2.5 2.5 0 0 0 4.5 21h15A2.5 2.5 0 0 0 22 18.5v-13A2.5 2.5 0 0 0 19.5 3h-15A2.5 2.5 0 0 0 2 5.5z" /></svg><span>alwin.jose.george@example.com</span></li>
+              <li><svg class="icon" viewBox="0 0 24 24"><path d="M22 16.92v3A2 2 0 0 1 20 22a19 19 0 0 1-8.63-2.44A19 19 0 0 1 3 9a2 2 0 0 1 2-2h3.09a2 2 0 0 1 2 1.72c.12 1.01.5 2.02 1.09 2.9a2 2 0 0 1-.45 2.72L8.09 16.91"/></svg><span>+91 98765 43210</span></li>
+              <li><svg class="icon" viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z" /></svg><span>Poonjar, Kerala, India</span></li>
+            </ul>
+          </div>
+          <div class="info-card small">
+            <h4>Connect With Me</h4>
+            <div class="socials">
+              <a href="#" aria-label="GitHub" title="GitHub">GitHub</a>
+              <a href="#" aria-label="LinkedIn" title="LinkedIn">LinkedIn</a>
+              <a href="#" aria-label="Email" title="Email">Email</a>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+      <div class="container">
+        <p>© <span id="year"></span> Alwin Jose George — All rights reserved.</p>
+      </div>
+    </footer>
+  </main>
+
+  <script src="script.js"></script>
 </body>
 </html>
