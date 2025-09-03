@@ -1,207 +1,97 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Alwin Jose George — Portfolio</title>
-  <meta name="description" content="Alwin Jose George — BTech Student | Image Processing | AI | Web & Mobile projects" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Alwin Jose George | Portfolio</title>
   <link rel="stylesheet" href="styles.css">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Poppins:wght@500;700&display=swap" rel="stylesheet">
+  <script defer src="scripts.js"></script>
 </head>
 <body>
-  <header class="site-header">
-    <div class="container header-inner">
-      <a class="brand" href="#">
-        <div class="logo">A</div>
-        <div class="brand-text">
-          <div class="name">Alwin Jose George</div>
-          <div class="role">BTech • Image Processing • AI</div>
-        </div>
-      </a>
-      <nav class="main-nav">
-        <a href="#about">About</a>
-        <a href="#projects">Projects</a>
-        <a href="#gallery">Gallery</a>
-        <a href="#contact">Contact</a>
-      </nav>
-      <button class="menu-btn" id="menuBtn" aria-label="Open menu">☰</button>
+  <!-- Hero Section -->
+  <header class="hero">
+    <div class="overlay"></div>
+    <div class="hero-content">
+      <img src="images/profile.jpg" alt="Alwin" class="profile-pic">
+      <h1>Hi, I'm <span>Alwin Jose George</span></h1>
+      <p>BTech CSE Student | AI & Image Processing Enthusiast</p>
+      <a href="resume.pdf" class="btn">Download Resume</a>
     </div>
   </header>
 
-  <!-- HERO -->
-  <section class="hero" id="home">
-    <div class="hero-overlay"></div>
-    <div class="container hero-inner">
-      <div class="hero-left">
-        <div class="profile">
-          <img src="images/profile.jpg" alt="Alwin profile" class="profile-img">
-          <div>
-            <h1 class="hero-title">Hi, I’m <span>Alwin</span>.</h1>
-            <p class="hero-sub">I build image-first AI projects and polished web & mobile apps. BTech (KTU) • Poonjar, Kerala.</p>
-            <div class="hero-ctas">
-              <a class="btn btn-primary" href="#projects">See Projects</a>
-              <a class="btn btn-outline" href="resume.pdf" download>Download Resume</a>
-            </div>
-          </div>
-        </div>
+  <!-- About -->
+  <section id="about" class="about">
+    <div class="about-img">
+      <img src="images/about.jpg" alt="About Me">
+    </div>
+    <div class="about-text">
+      <h2>About Me</h2>
+      <p>I’m a BTech 1st-year student at KTU University passionate about computer science, AI, and image processing. 
+         My goal is to work in companies like <strong>Tata</strong> or <strong>Google</strong>, and later pursue an MBA abroad.</p>
+    </div>
+  </section>
 
-        <ul class="hero-stats">
-          <li><strong>8+</strong><span>Projects</span></li>
-          <li><strong>3+</strong><span>Workshops</span></li>
-          <li><strong>TATUA</strong><span>3D Gaming Dev</span></li>
-        </ul>
+  <!-- Skills -->
+  <section id="skills" class="skills">
+    <h2>Skills</h2>
+    <div class="grid">
+      <div class="card">C / C++</div>
+      <div class="card">Python</div>
+      <div class="card">AI & Image Processing</div>
+      <div class="card">Web Development</div>
+      <div class="card">Problem Solving</div>
+      <div class="card">Team Leadership</div>
+    </div>
+  </section>
+
+  <!-- Projects -->
+  <section id="projects" class="projects">
+    <h2>Projects</h2>
+    <div class="grid">
+      <div class="project-card">
+        <img src="images/project1.jpg" alt="Project">
+        <div class="overlay"><h3>Smart Attendance AI</h3></div>
       </div>
-
-      <div class="hero-right">
-        <div class="profile-card card">
-          <img src="images/hero-sample.jpg" alt="project sample" class="card-img">
-          <div class="card-body">
-            <div class="muted">Based in</div>
-            <div class="strong">Poonjar, Kerala</div>
-            <div class="muted" style="margin-top:8px">Looking for internships & collaborations</div>
-          </div>
-        </div>
+      <div class="project-card">
+        <img src="images/project2.jpg" alt="Project">
+        <div class="overlay"><h3>Eco Travel Mate</h3></div>
+      </div>
+      <div class="project-card">
+        <img src="images/project3.jpg" alt="Project">
+        <div class="overlay"><h3>GreenPath Mobility</h3></div>
+      </div>
+      <div class="project-card">
+        <img src="images/project4.jpg" alt="Project">
+        <div class="overlay"><h3>Modern Gallery</h3></div>
       </div>
     </div>
   </section>
 
-  <!-- ABOUT -->
-  <section class="section" id="about">
-    <div class="container grid about-grid">
-      <div class="about-photo card">
-        <img src="images/about.jpg" alt="About image">
-      </div>
-      <div>
-        <h2>About Me</h2>
-        <p class="muted">I’m a BTech 1st-year at KTU with strong foundations in programming, mathematics and digital imaging. I focus on image processing, computer vision and building real projects that solve problems. My Plan B is to start a tech business and lead a team to deliver usable solutions.</p>
-
-        <div class="info-grid">
-          <div><strong>Education</strong><div class="muted">BTech, KTU (1st year)</div></div>
-          <div><strong>Workshops</strong><div class="muted">TATUA - 3D Gaming Dev, Tesseract - Cybersecurity</div></div>
-          <div><strong>Interests</strong><div class="muted">Image Processing, ML, Web Dev</div></div>
-          <div><strong>Location</strong><div class="muted">Poonjar, Kerala</div></div>
-        </div>
-      </div>
+  <!-- Gallery -->
+  <section id="gallery" class="gallery">
+    <h2>Gallery</h2>
+    <div class="grid">
+      <img src="images/gallery1.jpg" alt="">
+      <img src="images/gallery2.jpg" alt="">
+      <img src="images/gallery3.jpg" alt="">
+      <img src="images/gallery4.jpg" alt="">
+      <img src="images/gallery5.jpg" alt="">
+      <img src="images/gallery6.jpg" alt="">
+      <img src="images/gallery7.jpg" alt="">
+      <img src="images/gallery8.jpg" alt="">
+      <img src="images/gallery9.jpg" alt="">
     </div>
   </section>
 
-  <!-- SKILLS -->
-  <section class="section alt" id="skills">
-    <div class="container">
-      <h2>Skills</h2>
-      <div class="skills-grid">
-        <div class="skill">C Programming</div>
-        <div class="skill">Data Structures</div>
-        <div class="skill">Image Processing</div>
-        <div class="skill">Computer Vision</div>
-        <div class="skill">React & Web</div>
-        <div class="skill">Python</div>
-        <div class="skill">OpenCV</div>
-        <div class="skill">Git & GitHub</div>
-      </div>
+  <!-- Contact -->
+  <footer class="contact">
+    <h2>Contact Me</h2>
+    <p>Email: <a href="mailto:alwin@example.com">alwin@example.com</a></p>
+    <div class="socials">
+      <a href="https://github.com/alwinjosegeorge" target="_blank">GitHub</a>
+      <a href="https://linkedin.com" target="_blank">LinkedIn</a>
     </div>
-  </section>
-
-  <!-- PROJECTS -->
-  <section class="section" id="projects">
-    <div class="container">
-      <h2>Selected Projects</h2>
-      <div class="projects-grid">
-        <article class="project card">
-          <img src="images/project1.jpg" alt="Eco Travel Mate" class="project-img">
-          <div class="project-body">
-            <h3>Eco Travel Mate</h3>
-            <p class="muted">Smart mobility & carbon-tracking app. Trip detection, GreenPath Score, weekly challenges and Live AQI.</p>
-            <a class="link" href="https://github.com/alwinjosegeorge/Eco-Travel-Mate" target="_blank">View Repo</a>
-          </div>
-        </article>
-
-        <article class="project card">
-          <img src="images/project2.jpg" alt="GreenPath" class="project-img">
-          <div class="project-body">
-            <h3>GreenPath</h3>
-            <p class="muted">Nudges users to greener transport with scoring and simple UX.</p>
-            <a class="link" href="https://github.com/alwinjosegeorge/GreenPath" target="_blank">View Repo</a>
-          </div>
-        </article>
-
-        <article class="project card">
-          <img src="images/project3.jpg" alt="Gallery" class="project-img">
-          <div class="project-body">
-            <h3>Alwin's Modern Gallery</h3>
-            <p class="muted">Responsive photo & video gallery with MP4 support.</p>
-            <a class="link" href="https://github.com/alwinjosegeorge/Alwins-modern-gallery" target="_blank">View Repo</a>
-          </div>
-        </article>
-
-        <article class="project card">
-          <img src="images/project4.jpg" alt="Attendance" class="project-img">
-          <div class="project-body">
-            <h3>Smart Attendance System</h3>
-            <p class="muted">Face-detection attendance using OpenCV with privacy-focused storage.</p>
-            <div class="muted">Class project</div>
-          </div>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <!-- GALLERY -->
-  <section class="section" id="gallery">
-    <div class="container">
-      <h2>Gallery</h2>
-      <p class="muted">Click to preview. Replace these with your own photos or MP4 thumbnails anytime.</p>
-      <div class="masonry" id="masonry">
-        <div class="masonry-item"><img src="images/gallery1.jpg" alt=""></div>
-        <div class="masonry-item"><img src="images/gallery2.jpg" alt=""></div>
-        <div class="masonry-item"><img src="images/gallery3.jpg" alt=""></div>
-        <div class="masonry-item"><img src="images/gallery4.jpg" alt=""></div>
-        <div class="masonry-item"><img src="images/gallery5.jpg" alt=""></div>
-        <div class="masonry-item"><img src="images/gallery6.jpg" alt=""></div>
-        <div class="masonry-item"><img src="images/gallery7.jpg" alt=""></div>
-        <div class="masonry-item"><img src="images/gallery8.jpg" alt=""></div>
-        <div class="masonry-item"><img src="images/gallery9.jpg" alt=""></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- CONTACT -->
-  <section class="section alt" id="contact">
-    <div class="container contact-grid">
-      <div class="card contact-card">
-        <h2>Contact</h2>
-        <p class="muted">Plathottam (H), Payyanithottam, Poonjar South P.O., Kottayam, Kerala – 686582</p>
-        <p class="muted">Email: <a href="mailto:alwin@example.com">alwin@example.com</a></p>
-        <p class="muted">GitHub: <a href="https://github.com/alwinjosegeorge">github.com/alwinjosegeorge</a></p>
-        <div class="contact-social">
-          <a href="#"><img src="icons/brand-github.svg" alt="GitHub"></a>
-          <a href="#"><img src="icons/brand-linkedin.svg" alt="LinkedIn"></a>
-        </div>
-      </div>
-
-      <form class="card contact-form" id="contactForm">
-        <label for="name">Name</label>
-        <input id="name" name="name" placeholder="Your name" required>
-        <label for="email">Email</label>
-        <input id="email" name="email" placeholder="you@mail.com" required>
-        <label for="msg">Message</label>
-        <textarea id="msg" name="msg" rows="6" placeholder="Write a quick message"></textarea>
-        <button type="submit" class="btn btn-primary">Send Message</button>
-        <div id="formResult" class="small muted" style="margin-top:10px"></div>
-      </form>
-    </div>
-  </section>
-
-  <footer class="site-footer">
-    <div class="container">© <span id="year"></span> Alwin Jose George • Built with care</div>
+    <p class="copy">© 2025 Alwin Jose George</p>
   </footer>
-
-  <!-- image modal -->
-  <div id="imgModal" class="modal" aria-hidden="true">
-    <button class="modal-close" id="modalClose">✕</button>
-    <img id="modalImg" src="" alt="preview">
-  </div>
-
-  <script src="scripts.js"></script>
 </body>
 </html>
