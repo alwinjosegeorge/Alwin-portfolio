@@ -5,362 +5,203 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Alwin Jose George — Portfolio</title>
   <meta name="description" content="Alwin Jose George — BTech Student | Image Processing | AI | Web & Mobile projects" />
-  <link rel="icon" href="data:;base64,iVBORw0KGgo=" />
-  <style>
-    /* ----------------- Base / Reset ----------------- */
-    :root{
-      --bg:#070916;
-      --card:#0e1624;
-      --muted:#9aa4b2;
-      --accent1:#7c3aed; /* purple */
-      --accent2:#ff6b6b; /* coral */
-      --glass: rgba(255,255,255,0.04);
-      --glass-2: rgba(255,255,255,0.03);
-      --radius:14px;
-      color-scheme: dark;
-      font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
-    }
-    *{box-sizing:border-box}
-    html,body{height:100%}
-    body{
-      margin:0;
-      background: radial-gradient(1200px 600px at 10% 10%, rgba(124,58,237,0.12), transparent),
-                  linear-gradient(180deg,var(--bg), #041021 140%);
-      color:#e6eef6;
-      -webkit-font-smoothing:antialiased;
-      -moz-osx-font-smoothing:grayscale;
-      line-height:1.4;
-    }
-    a{color:var(--accent1);text-decoration:none}
-    img{max-width:100%;display:block}
-
-    /* ----------------- Layout ----------------- */
-    .container{max-width:1100px;margin:28px auto;padding:24px}
-    header{display:flex;align-items:center;justify-content:space-between;gap:18px}
-    .brand{display:flex;align-items:center;gap:12px}
-    .logo{width:56px;height:56px;border-radius:12px;background:linear-gradient(135deg,var(--accent1),var(--accent2));display:flex;align-items:center;justify-content:center;font-weight:700;font-size:20px;box-shadow:0 6px 20px rgba(2,6,23,0.6)}
-    nav{display:flex;gap:14px;align-items:center}
-    .btn{display:inline-flex;gap:8px;align-items:center;padding:8px 12px;border-radius:10px;background:var(--glass);border:1px solid rgba(255,255,255,0.03);cursor:pointer}
-
-    /* ----------------- Hero ----------------- */
-    .hero{display:grid;grid-template-columns:1fr 420px;gap:30px;margin-top:28px;align-items:center}
-    .hi{font-size:28px;font-weight:800;margin:0}
-    .lead{color:var(--muted);max-width:60ch;margin-top:12px}
-    .cta{margin-top:18px;display:flex;gap:12px}
-
-    .card{background:linear-gradient(180deg,var(--card),#071227);padding:18px;border-radius:var(--radius);box-shadow:0 8px 30px rgba(2,6,23,0.6);border:1px solid rgba(255,255,255,0.03)}
-
-    /* ----------------- Stats ----------------- */
-    .stats{display:flex;gap:12px;margin-top:18px}
-    .stat{flex:1;padding:10px;border-radius:12px;background:var(--glass-2);text-align:center}
-    .stat .n{font-weight:700;font-size:18px}
-    .stat .t{font-size:12px;color:var(--muted)}
-
-    /* ----------------- Sections ----------------- */
-    section{margin-top:36px}
-    h2{font-size:20px;margin:0 0 12px 0}
-    p.muted{color:var(--muted);margin:0}
-
-    /* ----------------- Projects ----------------- */
-    .projects{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
-    .project{display:flex;flex-direction:column;gap:10px;padding:14px;border-radius:12px;background:linear-gradient(180deg,rgba(255,255,255,0.02),transparent);border:1px solid rgba(255,255,255,0.03)}
-    .project .meta{display:flex;justify-content:space-between;align-items:center}
-    .tags{display:flex;gap:8px;flex-wrap:wrap}
-    .tag{font-size:12px;padding:6px 8px;border-radius:8px;background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.02)}
-
-    /* ----------------- Gallery ----------------- */
-    .gallery{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
-    .gallery .item{height:110px;border-radius:10px;background-size:cover;background-position:center;cursor:pointer;overflow:hidden}
-
-    /* ----------------- Contact ----------------- */
-    .contact-grid{display:grid;grid-template-columns:1fr 360px;gap:18px}
-    .form input,.form textarea{width:100%;padding:10px;margin-top:6px;border-radius:8px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:inherit}
-    .form label{font-size:13px;color:var(--muted)}
-    .form button{margin-top:12px;padding:10px 14px;border-radius:10px;background:linear-gradient(90deg,var(--accent1),var(--accent2));border:none;color:white;cursor:pointer}
-
-    /* ----------------- Footer ----------------- */
-    footer{margin-top:36px;text-align:center;color:var(--muted);font-size:13px;padding:24px}
-
-    /* ----------------- Responsive ----------------- */
-    @media (max-width:980px){
-      .hero{grid-template-columns:1fr}
-      .projects{grid-template-columns:1fr}
-      .gallery{grid-template-columns:repeat(2,1fr)}
-      .contact-grid{grid-template-columns:1fr}
-      nav{display:none}
-    }
-
-    /* ----------------- Utilities & small niceties ----------------- */
-    .small{font-size:13px;color:var(--muted)}
-    .muted-2{color:rgba(255,255,255,0.6)}
-    .pill{padding:6px 10px;border-radius:999px;background:rgba(255,255,255,0.02);font-size:13px}
-
-    /* subtle hover */
-    .project:hover{transform:translateY(-6px);transition:transform .25s}
-    .card, .project, .gallery .item{transition:box-shadow .25s,transform .2s}
-
-    /* modal */
-    .modal{position:fixed;inset:0;background:rgba(2,6,23,0.65);display:flex;align-items:center;justify-content:center;padding:20px;z-index:999}
-    .modal .modal-card{width:100%;max-width:900px;border-radius:12px;padding:18px;background:linear-gradient(180deg,#071427,#06101a)}
-
-  </style>
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Poppins:wght@500;700&display=swap" rel="stylesheet">
 </head>
 <body>
-  <div class="container">
-    <header>
-      <div class="brand">
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="#">
         <div class="logo">A</div>
-        <div>
-          <div style="font-weight:800;font-size:16px">Alwin Jose George</div>
-          <div class="small">BTech (KTU) • Image Processing • AI</div>
+        <div class="brand-text">
+          <div class="name">Alwin Jose George</div>
+          <div class="role">BTech • Image Processing • AI</div>
         </div>
-      </div>
-
-      <nav aria-label="Main navigation">
-        <a class="btn" href="#projects">Projects</a>
-        <a class="btn" href="#gallery">Gallery</a>
-        <a class="btn" href="#contact">Contact</a>
+      </a>
+      <nav class="main-nav">
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#contact">Contact</a>
       </nav>
-    </header>
+      <button class="menu-btn" id="menuBtn" aria-label="Open menu">☰</button>
+    </div>
+  </header>
 
-    <!-- HERO -->
-    <main>
-      <section class="hero">
-        <div>
-          <h1 class="hi">Hi — I’m Alwin. I build image-first AI projects & modern web apps.</h1>
-          <p class="lead">I’m a BTech 1st-year at KTU from Poonjar, Kerala. I focus on image processing, computer vision and making polished, usable products. My Plan B: start a tech business and lead a team to deliver real solutions.</p>
-
-          <div class="cta">
-            <a class="btn" href="#projects">See Projects</a>
-            <a class="btn" href="/resume.pdf" download>Download Resume</a>
-          </div>
-
-          <div class="stats" aria-hidden="true">
-            <div class="stat"><div class="n">8+</div><div class="t">Projects</div></div>
-            <div class="stat"><div class="n">3+</div><div class="t">Workshops</div></div>
-            <div class="stat"><div class="n">TATUA</div><div class="t">3D Gaming Dev</div></div>
+  <!-- HERO -->
+  <section class="hero" id="home">
+    <div class="hero-overlay"></div>
+    <div class="container hero-inner">
+      <div class="hero-left">
+        <div class="profile">
+          <img src="images/profile.jpg" alt="Alwin profile" class="profile-img">
+          <div>
+            <h1 class="hero-title">Hi, I’m <span>Alwin</span>.</h1>
+            <p class="hero-sub">I build image-first AI projects and polished web & mobile apps. BTech (KTU) • Poonjar, Kerala.</p>
+            <div class="hero-ctas">
+              <a class="btn btn-primary" href="#projects">See Projects</a>
+              <a class="btn btn-outline" href="resume.pdf" download>Download Resume</a>
+            </div>
           </div>
         </div>
 
-        <aside class="card">
-          <div style="height:220px;border-radius:12px;background-image:url('https://source.unsplash.com/collection/190727/800x600');background-size:cover;background-position:center"></div>
-          <div style="display:flex;justify-content:space-between;margin-top:12px;align-items:center">
-            <div>
-              <div class="small">Based in</div>
-              <div style="font-weight:600">Poonjar, Kerala</div>
-            </div>
-            <div style="text-align:right">
-              <div class="small">Looking for</div>
-              <div style="font-weight:600">Internships • Collaborations</div>
-            </div>
-          </div>
-        </aside>
-      </section>
-
-      <!-- ABOUT -->
-      <section id="about">
-        <div class="card">
-          <h2>About</h2>
-          <p class="muted">I enjoy building web & mobile projects. I’ve worked on AI-enabled attendance systems, media galleries, and sustainable mobility apps like Eco Travel Mate and GreenPath. I also actively participate in hackathons and workshops. I prefer presenting in Malayalam-English mix and keep slides short and confident.</p>
-          <div style="display:flex;gap:12px;margin-top:12px;flex-wrap:wrap">
-            <div class="pill">BTech, KTU</div>
-            <div class="pill">C • Python • React</div>
-            <div class="pill">Image Processing • OpenCV</div>
-            <div class="pill">GitHub: alwinjosegeorge</div>
-          </div>
-        </div>
-      </section>
-
-      <!-- PROJECTS -->
-      <section id="projects">
-        <h2>Selected Projects</h2>
-        <div class="projects" style="margin-top:12px">
-
-          <article class="project">
-            <div class="meta">
-              <div>
-                <div style="font-weight:700">Eco Travel Mate</div>
-                <div class="small">Smart mobility & carbon-tracking app</div>
-              </div>
-              <a class="small" href="https://github.com/alwinjosegeorge/Eco-Travel-Mate" target="_blank">View Repo</a>
-            </div>
-            <p class="muted">Trip detection, personalized GreenPath Score, weekly challenges, family leaderboards and Live Air Quality integration.</p>
-            <div class="tags" aria-hidden>
-              <div class="tag">React</div>
-              <div class="tag">PWA</div>
-              <div class="tag">OpenWeather API</div>
-            </div>
-          </article>
-
-          <article class="project">
-            <div class="meta">
-              <div>
-                <div style="font-weight:700">GreenPath</div>
-                <div class="small">Nudges users to greener transport</div>
-              </div>
-              <a class="small" href="https://github.com/alwinjosegeorge/GreenPath" target="_blank">View Repo</a>
-            </div>
-            <p class="muted">Personalized suggestions to walk, cycle or take public transport. Simple UX with scoring and analytics.</p>
-            <div class="tags">
-              <div class="tag">React Native</div>
-              <div class="tag">Analytics</div>
-              <div class="tag">Sustainability</div>
-            </div>
-          </article>
-
-          <article class="project">
-            <div class="meta">
-              <div>
-                <div style="font-weight:700">Alwin's Modern Gallery</div>
-                <div class="small">Responsive photo & video gallery</div>
-              </div>
-              <a class="small" href="https://github.com/alwinjosegeorge/Alwins-modern-gallery" target="_blank">View Repo</a>
-            </div>
-            <p class="muted">A modern gallery with MP4 support, masonry layout and responsive media pages.</p>
-            <div class="tags">
-              <div class="tag">Next.js</div>
-              <div class="tag">Tailwind</div>
-              <div class="tag">Media</div>
-            </div>
-          </article>
-
-          <article class="project">
-            <div class="meta">
-              <div>
-                <div style="font-weight:700">Smart Attendance System Using AI Cameras</div>
-                <div class="small">IPR class project</div>
-              </div>
-              <div class="small">Private</div>
-            </div>
-            <p class="muted">Face detection for attendance using OpenCV with privacy-oriented data handling and reporting.</p>
-            <div class="tags">
-              <div class="tag">Computer Vision</div>
-              <div class="tag">Python</div>
-              <div class="tag">OpenCV</div>
-            </div>
-          </article>
-
-        </div>
-      </section>
-
-      <!-- GALLERY -->
-      <section id="gallery">
-        <h2>Gallery</h2>
-        <p class="muted">Click images to preview. I can replace these placeholders with your photos and MP4 videos.</p>
-        <div class="gallery" style="margin-top:12px">
-          <div class="item" style="background-image:url('https://source.unsplash.com/random/800x600?sig=1')" data-full="https://source.unsplash.com/random/1600x1200?sig=1"></div>
-          <div class="item" style="background-image:url('https://source.unsplash.com/random/800x600?sig=2')" data-full="https://source.unsplash.com/random/1600x1200?sig=2"></div>
-          <div class="item" style="background-image:url('https://source.unsplash.com/random/800x600?sig=3')" data-full="https://source.unsplash.com/random/1600x1200?sig=3"></div>
-          <div class="item" style="background-image:url('https://source.unsplash.com/random/800x600?sig=4')" data-full="https://source.unsplash.com/random/1600x1200?sig=4"></div>
-          <div class="item" style="background-image:url('https://source.unsplash.com/random/800x600?sig=5')" data-full="https://source.unsplash.com/random/1600x1200?sig=5"></div>
-          <div class="item" style="background-image:url('https://source.unsplash.com/random/800x600?sig=6')" data-full="https://source.unsplash.com/random/1600x1200?sig=6"></div>
-          <div class="item" style="background-image:url('https://source.unsplash.com/random/800x600?sig=7')" data-full="https://source.unsplash.com/random/1600x1200?sig=7"></div>
-          <div class="item" style="background-image:url('https://source.unsplash.com/random/800x600?sig=8')" data-full="https://source.unsplash.com/random/1600x1200?sig=8"></div>
-        </div>
-      </section>
-
-      <!-- CONTACT -->
-      <section id="contact">
-        <h2>Contact</h2>
-        <div class="contact-grid" style="margin-top:12px">
-          <div class="card">
-            <div style="font-weight:700">Get in touch</div>
-            <p class="muted" style="margin-top:8px">Plathottam (H), Payyanithottam, Poonjar South P.O., Kottayam, Kerala – 686582</p>
-            <p class="muted" style="margin-top:6px">Email: <a href="mailto:alwin@example.com">alwin@example.com</a></p>
-            <p class="muted" style="margin-top:6px">GitHub: <a href="https://github.com/alwinjosegeorge">github.com/alwinjosegeorge</a></p>
-            <div style="margin-top:12px"><span class="pill">Open to internships</span></div>
-          </div>
-
-          <form class="card form" id="contactForm">
-            <label for="name">Name</label>
-            <input id="name" name="name" placeholder="Your name" required />
-            <label for="email">Email</label>
-            <input id="email" name="email" placeholder="you@mail.com" required />
-            <label for="msg">Message</label>
-            <textarea id="msg" name="msg" rows="6" placeholder="Write a quick message"></textarea>
-            <button type="submit">Send Message</button>
-            <div id="formResult" class="small" style="margin-top:8px;color:var(--muted)"></div>
-          </form>
-        </div>
-      </section>
-
-      <footer>
-        © <span id="year"></span> Alwin Jose George • Built with care
-      </footer>
-
-    </main>
-
-  </div>
-
-  <!-- Modal (image preview) -->
-  <div id="modal" style="display:none" class="modal" role="dialog" aria-modal="true">
-    <div class="modal-card">
-      <div style="display:flex;justify-content:space-between;align-items:center">
-        <div style="font-weight:700">Preview</div>
-        <button id="closeModal" class="btn">Close</button>
+        <ul class="hero-stats">
+          <li><strong>8+</strong><span>Projects</span></li>
+          <li><strong>3+</strong><span>Workshops</span></li>
+          <li><strong>TATUA</strong><span>3D Gaming Dev</span></li>
+        </ul>
       </div>
-      <div style="margin-top:12px">
-        <img id="modalImg" src="" alt="preview" style="width:100%;border-radius:8px;max-height:70vh;object-fit:contain" />
+
+      <div class="hero-right">
+        <div class="profile-card card">
+          <img src="images/hero-sample.jpg" alt="project sample" class="card-img">
+          <div class="card-body">
+            <div class="muted">Based in</div>
+            <div class="strong">Poonjar, Kerala</div>
+            <div class="muted" style="margin-top:8px">Looking for internships & collaborations</div>
+          </div>
+        </div>
       </div>
     </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="section" id="about">
+    <div class="container grid about-grid">
+      <div class="about-photo card">
+        <img src="images/about.jpg" alt="About image">
+      </div>
+      <div>
+        <h2>About Me</h2>
+        <p class="muted">I’m a BTech 1st-year at KTU with strong foundations in programming, mathematics and digital imaging. I focus on image processing, computer vision and building real projects that solve problems. My Plan B is to start a tech business and lead a team to deliver usable solutions.</p>
+
+        <div class="info-grid">
+          <div><strong>Education</strong><div class="muted">BTech, KTU (1st year)</div></div>
+          <div><strong>Workshops</strong><div class="muted">TATUA - 3D Gaming Dev, Tesseract - Cybersecurity</div></div>
+          <div><strong>Interests</strong><div class="muted">Image Processing, ML, Web Dev</div></div>
+          <div><strong>Location</strong><div class="muted">Poonjar, Kerala</div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section class="section alt" id="skills">
+    <div class="container">
+      <h2>Skills</h2>
+      <div class="skills-grid">
+        <div class="skill">C Programming</div>
+        <div class="skill">Data Structures</div>
+        <div class="skill">Image Processing</div>
+        <div class="skill">Computer Vision</div>
+        <div class="skill">React & Web</div>
+        <div class="skill">Python</div>
+        <div class="skill">OpenCV</div>
+        <div class="skill">Git & GitHub</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section class="section" id="projects">
+    <div class="container">
+      <h2>Selected Projects</h2>
+      <div class="projects-grid">
+        <article class="project card">
+          <img src="images/project1.jpg" alt="Eco Travel Mate" class="project-img">
+          <div class="project-body">
+            <h3>Eco Travel Mate</h3>
+            <p class="muted">Smart mobility & carbon-tracking app. Trip detection, GreenPath Score, weekly challenges and Live AQI.</p>
+            <a class="link" href="https://github.com/alwinjosegeorge/Eco-Travel-Mate" target="_blank">View Repo</a>
+          </div>
+        </article>
+
+        <article class="project card">
+          <img src="images/project2.jpg" alt="GreenPath" class="project-img">
+          <div class="project-body">
+            <h3>GreenPath</h3>
+            <p class="muted">Nudges users to greener transport with scoring and simple UX.</p>
+            <a class="link" href="https://github.com/alwinjosegeorge/GreenPath" target="_blank">View Repo</a>
+          </div>
+        </article>
+
+        <article class="project card">
+          <img src="images/project3.jpg" alt="Gallery" class="project-img">
+          <div class="project-body">
+            <h3>Alwin's Modern Gallery</h3>
+            <p class="muted">Responsive photo & video gallery with MP4 support.</p>
+            <a class="link" href="https://github.com/alwinjosegeorge/Alwins-modern-gallery" target="_blank">View Repo</a>
+          </div>
+        </article>
+
+        <article class="project card">
+          <img src="images/project4.jpg" alt="Attendance" class="project-img">
+          <div class="project-body">
+            <h3>Smart Attendance System</h3>
+            <p class="muted">Face-detection attendance using OpenCV with privacy-focused storage.</p>
+            <div class="muted">Class project</div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALLERY -->
+  <section class="section" id="gallery">
+    <div class="container">
+      <h2>Gallery</h2>
+      <p class="muted">Click to preview. Replace these with your own photos or MP4 thumbnails anytime.</p>
+      <div class="masonry" id="masonry">
+        <div class="masonry-item"><img src="images/gallery1.jpg" alt=""></div>
+        <div class="masonry-item"><img src="images/gallery2.jpg" alt=""></div>
+        <div class="masonry-item"><img src="images/gallery3.jpg" alt=""></div>
+        <div class="masonry-item"><img src="images/gallery4.jpg" alt=""></div>
+        <div class="masonry-item"><img src="images/gallery5.jpg" alt=""></div>
+        <div class="masonry-item"><img src="images/gallery6.jpg" alt=""></div>
+        <div class="masonry-item"><img src="images/gallery7.jpg" alt=""></div>
+        <div class="masonry-item"><img src="images/gallery8.jpg" alt=""></div>
+        <div class="masonry-item"><img src="images/gallery9.jpg" alt=""></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="section alt" id="contact">
+    <div class="container contact-grid">
+      <div class="card contact-card">
+        <h2>Contact</h2>
+        <p class="muted">Plathottam (H), Payyanithottam, Poonjar South P.O., Kottayam, Kerala – 686582</p>
+        <p class="muted">Email: <a href="mailto:alwin@example.com">alwin@example.com</a></p>
+        <p class="muted">GitHub: <a href="https://github.com/alwinjosegeorge">github.com/alwinjosegeorge</a></p>
+        <div class="contact-social">
+          <a href="#"><img src="icons/brand-github.svg" alt="GitHub"></a>
+          <a href="#"><img src="icons/brand-linkedin.svg" alt="LinkedIn"></a>
+        </div>
+      </div>
+
+      <form class="card contact-form" id="contactForm">
+        <label for="name">Name</label>
+        <input id="name" name="name" placeholder="Your name" required>
+        <label for="email">Email</label>
+        <input id="email" name="email" placeholder="you@mail.com" required>
+        <label for="msg">Message</label>
+        <textarea id="msg" name="msg" rows="6" placeholder="Write a quick message"></textarea>
+        <button type="submit" class="btn btn-primary">Send Message</button>
+        <div id="formResult" class="small muted" style="margin-top:10px"></div>
+      </form>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="container">© <span id="year"></span> Alwin Jose George • Built with care</div>
+  </footer>
+
+  <!-- image modal -->
+  <div id="imgModal" class="modal" aria-hidden="true">
+    <button class="modal-close" id="modalClose">✕</button>
+    <img id="modalImg" src="" alt="preview">
   </div>
 
-  <script>
-    // small helper
-    const $ = (sel, el=document)=> el.querySelector(sel);
-    const $$ = (sel, el=document)=> Array.from(el.querySelectorAll(sel));
-
-    // set year
-    document.getElementById('year').innerText = new Date().getFullYear();
-
-    // gallery modal
-    const items = $$('.gallery .item');
-    const modal = document.getElementById('modal');
-    const modalImg = document.getElementById('modalImg');
-    const closeModal = document.getElementById('closeModal');
-
-    items.forEach(it=>{
-      it.addEventListener('click', ()=>{
-        const src = it.getAttribute('data-full') || window.getComputedStyle(it).backgroundImage.slice(5,-2);
-        modalImg.src = src;
-        modal.style.display = 'flex';
-        document.body.style.overflow = 'hidden';
-      })
-    });
-    closeModal.addEventListener('click', ()=>{ modal.style.display='none'; document.body.style.overflow=''; modalImg.src=''; });
-    modal.addEventListener('click', (e)=>{ if(e.target===modal) { modal.style.display='none'; document.body.style.overflow=''; modalImg.src=''; } });
-
-    // contact form (demo; replace with real endpoint)
-    const form = document.getElementById('contactForm');
-    const result = document.getElementById('formResult');
-    form.addEventListener('submit', (e)=>{
-      e.preventDefault();
-      const name = form.name.value.trim();
-      const email = form.email.value.trim();
-      const msg = form.msg.value.trim();
-      if(!name||!email){ result.innerText='Please enter name and email.'; return; }
-      // fake sending
-      result.style.color = 'var(--muted)';
-      result.innerText = 'Sending...';
-      setTimeout(()=>{
-        result.style.color = 'lightgreen';
-        result.innerText = 'Message sent! I will reply soon.';
-        form.reset();
-      },900);
-    });
-
-    // keyboard close (escape)
-    document.addEventListener('keydown', (e)=>{ if(e.key==='Escape'){ if(modal.style.display==='flex'){ modal.style.display='none'; document.body.style.overflow=''; modalImg.src=''; } } });
-
-    // progressive enhancement: if JS disabled, gallery still visible as background images
-
-    /*
-      NOTES for you (developer):
-      - Replace /resume.pdf with your real resume file in the same folder.
-      - Replace gallery placeholders with your actual images or video thumbnails. For MP4 previews you can open a video player instead of an img in modal.
-      - To add Live AQI widget: call OpenWeather or other API from server or client. I can add that code if you want.
-      - To deploy: upload this file and resume.pdf to any static host (Netlify, Vercel, GitHub Pages).
-    */
-  </script>
+  <script src="scripts.js"></script>
 </body>
 </html>
