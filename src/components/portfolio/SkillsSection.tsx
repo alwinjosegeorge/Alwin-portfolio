@@ -1,3 +1,4 @@
+// SkillsSection.jsx (Updated Code)
 import { Progress } from "@/components/ui/progress";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -18,7 +19,7 @@ const SkillsSection = () => {
 
   const softSkills = [
     "Problem Solving",
-    "Team Leadership", 
+    "Team Leadership",
     "Creative Thinking",
     "Project Management",
     "Communication",
@@ -31,7 +32,7 @@ const SkillsSection = () => {
     <section id="skills" className="py-20 scroll-offset">
       <div className="container mx-auto px-6">
         <div className="max-w-6xl mx-auto">
-          {/* Section Header */}
+          {/* Section Header (Unchanged) */}
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold mb-4">
               My <span className="bg-gradient-primary bg-clip-text text-transparent">Skills</span>
@@ -42,9 +43,9 @@ const SkillsSection = () => {
           </div>
 
           <div className="grid lg:grid-cols-3 gap-12">
-            {/* Technical Skills */}
+            {/* Technical Skills (Already had the effect) */}
             <div className="lg:col-span-2">
-              <Card className="bg-card/50 border-primary/20 neon-glow">
+              <Card className="bg-card/50 border-primary/20 neon-glow hover:border-primary/40 transition-all duration-300 hover:scale-105"> 
                 <CardHeader>
                   <CardTitle className="text-2xl text-primary">Technical Expertise</CardTitle>
                 </CardHeader>
@@ -79,8 +80,8 @@ const SkillsSection = () => {
 
             {/* Soft Skills & Certifications */}
             <div className="space-y-8">
-              {/* Soft Skills */}
-              <Card className="bg-card/50 border-secondary/20 green-glow">
+              {/* Soft Skills (EFFECT ADDED) */}
+              <Card className="bg-card/50 border-secondary/20 green-glow hover:border-secondary/40 transition-all duration-300 hover:scale-105">
                 <CardHeader>
                   <CardTitle className="text-xl text-secondary">Soft Skills</CardTitle>
                 </CardHeader>
@@ -99,8 +100,8 @@ const SkillsSection = () => {
                 </CardContent>
               </Card>
 
-              {/* Key Achievements */}
-              <Card className="bg-card/50 border-accent/20">
+              {/* Key Achievements (EFFECT ADDED) */}
+              <Card className="bg-card/50 border-accent/20 hover:border-accent/40 transition-all duration-300 hover:scale-105">
                 <CardHeader>
                   <CardTitle className="text-xl text-accent">Key Achievements</CardTitle>
                 </CardHeader>
@@ -131,8 +132,8 @@ const SkillsSection = () => {
                 </CardContent>
               </Card>
 
-              {/* Learning Goals */}
-              <Card className="bg-gradient-primary/10 border-primary/30">
+              {/* Currently Learning (EFFECT ADDED) */}
+              <Card className="bg-gradient-primary/10 border-primary/30 hover:border-primary/50 transition-all duration-300 hover:scale-105">
                 <CardHeader>
                   <CardTitle className="text-xl text-primary">Currently Learning</CardTitle>
                 </CardHeader>
