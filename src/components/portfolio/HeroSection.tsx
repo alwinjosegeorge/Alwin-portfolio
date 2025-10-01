@@ -18,7 +18,7 @@ const HeroSection = () => {
             <div className="w-full h-full rounded-full bg-gradient-primary p-1 animate-pulse-glow">
               <div className="w-full h-full rounded-full bg-card flex items-center justify-center">
                 <div className="w-40 h-40 rounded-full bg-muted flex items-center justify-center text-6xl font-bold text-primary">
-                  Alwin
+                  AJG
                 </div>
               </div>
             </div>
