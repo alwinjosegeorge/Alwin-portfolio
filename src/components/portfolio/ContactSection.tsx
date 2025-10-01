@@ -39,28 +39,28 @@ const ContactSection = () => {
     {
       icon: Mail,
       label: "Email",
-      value: "alwin-alwinjosegeorge2028@cs.sjcetpalai.ac.in",
-      href: "mailto:alwin-alwinjosegeorge2028@cs.sjcetpalai.ac.in",
+      value: "alwinjosegeorge2028@cs.sjcetpalai.ac.in",
+      href: "mailto:alwinjosegeorge2028@cs.sjcetpalai.ac.in",
       color: "text-primary"
     },
     {
       icon: Github,
       label: "GitHub",
-      value: "github.com/alwinjosegeorge",
+      value: "alwinjosegeorge",
       href: "https://github.com/alwinjosegeorge",
       color: "text-foreground"
     },
     {
       icon: Linkedin,
       label: "LinkedIn",
-      value: "linkedin.com/in/alwin-jose-george-5b204032b",
+      value: "alwin-jose-george-5b204032b",
       href: "https://www.linkedin.com/in/alwin-jose-george-5b204032b",
       color: "text-primary"
     },
     {
       icon: Instagram,
       label: "Instagram",
-      value: "instagram.com/alwin_jose_george",
+      value: "alwin_jose_george",
       href: "https://www.instagram.com/alwin_jose_george/",
       color: "text-primary"
     }
@@ -123,7 +123,7 @@ const ContactSection = () => {
                     <MapPin className="w-5 h-5 text-secondary" />
                     <div>
                       <p className="font-semibold text-sm">Location</p>
-                      <p className="text-sm text-muted-foreground">Kerala, India</p>
+                      <p className="text-sm text-muted-foreground">Kottayam, Kerala</p>
                     </div>
                   </div>
                   <div className="flex items-center gap-3">
