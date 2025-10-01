@@ -8,9 +8,9 @@ const ExperienceSection = () => {
       id: 1,
       type: "Workshop",
       title: "3D Gaming Development Workshop",
-      organization: "NIT Calicut",
+      organization: "Tathva24",
       duration: "3 Days Intensive",
-      location: "Calicut, Kerala",
+      location: "NIT Calicut, Kerala",
       description: "Participated in an intensive workshop focused on 3D game development, learning advanced graphics programming, game engine architecture, and interactive design principles.",
       skills: ["Unity 3D", "C# Programming", "Game Physics", "3D Modeling", "Interactive Design"],
       icon: Code,
@@ -23,7 +23,7 @@ const ExperienceSection = () => {
       title: "Cybersecurity Workshop",
       organization: "Tesseract 8.0",
       duration: "2 Days",
-      location: "Technical Event",
+      location: "SJCET Palai",
       description: "Comprehensive cybersecurity training covering ethical hacking, network security, vulnerability assessment, and digital forensics techniques.",
       skills: ["Ethical Hacking", "Network Security", "Penetration Testing", "Digital Forensics", "Security Analysis"],
       icon: Shield,
@@ -35,7 +35,6 @@ const ExperienceSection = () => {
       type: "Hackathon",
       title: "Eco Travel Mate",
       organization: "Regional Hackathon",
-      duration: "48 Hours",
       location: "Participant",
       description: "Participated in a hackathon to develop an AI-powered sustainable travel platform. Collaborated with team members, managed project timeline, and presented to judges.",
       skills: ["Team Collaboration", "Project Management", "AI/ML", "Full-Stack Development", "Presentation"],
@@ -44,24 +43,11 @@ const ExperienceSection = () => {
     },
     {
       id: 4,
-      type: "Hackathon",
-      title: "HashItUp – True Shade",
-      organization: "MBC College of Engineering & Technology (MBCET)",
-      duration: "24 Hours",
-      location: "Participant",
-      description: "Developed a project to assist colour blind individuals by providing real-time image analysis to accurately identify, distinguish, and name colours. Department of Computer Science & Engineering hackathon.",
-      skills: ["Python", "OpenCV", "TensorFlow", "React Native", "Accessibility Design"],
-      icon: Award,
-      color: "primary",
-      certificate: "https://github.com/alwinjosegeorge/alwinjosegeorge/blob/main/certificate/hashitup%20certificates.jpg"
-    },
-    {
-      id: 5,
       type: "Internship",
       title: "AI & Data Science Internship",
       organization: "SRAI Smart Solutions Pvt Ltd & STEM Robotics Internationals",
       duration: "5 Days",
-      location: "Intern / Participant",
+      location: "Kochi",
       description: "Hands-on AI project experience covering artificial intelligence, data science, and Python programming. Participated in workshops, quizzes, and contributed to real-world AI/data science project tasks.",
       skills: ["Artificial Intelligence", "Data Science", "Python Programming", "Problem Solving", "Teamwork"],
       icon: Code,
@@ -71,6 +57,19 @@ const ExperienceSection = () => {
         "https://media.licdn.com/dms/image/v2/D4E22AQFX1wabVmLXDA/feedshare-shrink_800/B4EZgn.faoGYAg-/0/1753017356859?e=1761782400&v=beta&t=9N6vp4t-nQ3bJNyyO2gTxsSSfYC_Rv6yfoEMJtayCm0",
         "https://media.licdn.com/dms/image/v2/D4E22AQHVLc9KfIHVxw/feedshare-shrink_2048_1536/B4EZgn_AkVGcAs-/0/1753017495545?e=1761782400&v=beta&t=9a0O1wpADIa-G_G90SF59J62BqnnKMRGM503qjCzP0E"
       ]
+    },
+    {
+      id: 5,
+      type: "Hackathon",
+      title: "HashItUp – True Shade",
+      organization: "MBC College of Engineering & Technology (MBCET)",
+      duration: "24 Hours",
+      location: "Kuttikkanam",
+      description: "Developed a project to assist colour blind individuals by providing real-time image analysis to accurately identify, distinguish, and name colours. Department of Computer Science & Engineering hackathon.",
+      skills: ["Python", "OpenCV", "TensorFlow", "React Native", "Accessibility Design"],
+      icon: Award,
+      color: "primary",
+      certificate: "https://github.com/alwinjosegeorge/alwinjosegeorge/blob/main/certificate/hashitup%20certificates.jpg"
     }
   ];
 
