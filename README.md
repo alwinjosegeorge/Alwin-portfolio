@@ -1,5 +1,3 @@
-<h1 align="center">Alwin Jose George – Portfolio</h1>
-
 <p align="center">
   <a href="https://alwinportfolio.vercel.app/" target="_blank">
     <img src="Photos/Portfolio Banner.png" alt="Live Demo" width="800"/>
