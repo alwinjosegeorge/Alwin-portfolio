@@ -27,7 +27,7 @@ const ExperienceSection = () => {
       description: "Comprehensive cybersecurity training covering ethical hacking, network security, vulnerability assessment, and digital forensics techniques.",
       skills: ["Ethical Hacking", "Network Security", "Penetration Testing", "Digital Forensics", "Security Analysis"],
       icon: Shield,
-      color: "secondary",
+      color: "primary",
       certificate: "https://media.licdn.com/dms/image/v2/D4E22AQFcA2H0SqbasA/feedshare-shrink_800/B4EZcx1GNQG4Ak-/0/1748887698630?e=1761782400&v=beta&t=RulWtPn0UyCg32ThGlzndaQ9l8xQI9a4wEOnrzC6fr0"
     },
     {
