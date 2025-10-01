@@ -4,14 +4,14 @@ import { Badge } from "@/components/ui/badge";
 
 const SkillsSection = () => {
   const technicalSkills = [
-    { name: "Python", level: 90, category: "Programming" },
+    { name: "Python", level: 88, category: "Programming" },
     { name: "C/C++", level: 85, category: "Programming" },
-    { name: "JavaScript", level: 85, category: "Programming" },
-    { name: "React", level: 80, category: "Programming" },
-    { name: "Node.js", level: 75, category: "Programming" },
-    { name: "Machine Learning", level: 75, category: "AI/ML" },
+    { name: "JavaScript", level: 60, category: "Programming" },
+    { name: "React", level: 68, category: "Programming" },
+    { name: "Node.js", level: 60, category: "Programming" },
+    { name: "Machine Learning", level: 50, category: "AI/ML" },
     { name: "Computer Vision", level: 70, category: "AI/ML" },
-    { name: "Image Processing", level: 75, category: "AI/ML" },
+    { name: "Image Processing", level: 90, category: "AI/ML" },
     { name: "SQL", level: 70, category: "Database" },
     { name: "Git", level: 85, category: "Tools" }
   ];
