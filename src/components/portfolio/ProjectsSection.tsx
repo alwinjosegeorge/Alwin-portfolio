@@ -25,7 +25,7 @@ const ProjectsSection = () => {
       features: ["AI Recommendations", "Carbon Tracking", "Eco-Routes", "Community Features"],
       status: "Participant",
       github: "https://github.com/alwinjosegeorge/Eco-Travel-Mate",
-      demo: "https://alwinjosegeorge.github.io/Eco-Travel-Mate/"
+      demo: "https://eco-travel-mate.vercel.app/"
     },
     {
       id: 3,
