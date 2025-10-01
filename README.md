@@ -1,8 +1,14 @@
-## 🚀 Live Demo
+<h1 align="center">Alwin Jose George – Portfolio</h1>
 
-[Portfolio](https://alwinportfolio.vercel.app/)
+<p align="center">
+  <a href="https://alwinportfolio.vercel.app/" target="_blank">
+    <img src="Photos/Portfolio Banner.png" alt="Live Demo" width="800"/>
+  </a>
+</p>
 
----
+<p align="center">
+  <b>Click the image above to visit my live portfolio 🚀</b>
+</p>
 
 
 
