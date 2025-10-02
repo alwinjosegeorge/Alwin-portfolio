@@ -29,7 +29,7 @@ const HeroSection = () => {
         <div className="flex-1 flex justify-center items-center mt-10 md:mt-0">
           <div className="w-80 h-80 rounded-xl overflow-hidden shadow-2xl border-4 border-[#23242a] bg-[#181920] flex items-center justify-center">
             <img
-              src="/src/components/portfolio/alwin.png"
+              src="Alwin-portfolio/src/components/portfolio/alwin.png"
               alt="Alwin Jose George"
               className="object-cover w-full h-full"
             />
