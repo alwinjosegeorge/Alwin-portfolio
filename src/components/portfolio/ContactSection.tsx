@@ -114,7 +114,7 @@ const ContactSection = () => {
               </Card>
 
               {/* Quick Info */}
-              <Card className="bg-card/50 border-secondary/20 green-glow">
+              <Card className="bg-card/50 border-primary/20 neon-glow">
                 <CardHeader>
                   <CardTitle className="text-xl text-secondary">Quick Info</CardTitle>
                 </CardHeader>
@@ -137,7 +137,7 @@ const ContactSection = () => {
               </Card>
 
               {/* Call to Action */}
-              <Card className="bg-gradient-primary/10 border-primary/30">
+              <Card className="bg-card/50 border-primary/20 neon-glow">
                 <CardContent className="p-6 text-center">
                   <h3 className="font-semibold mb-2 text-primary">Let's Build Something Amazing</h3>
                   <p className="text-sm text-muted-foreground mb-4">
