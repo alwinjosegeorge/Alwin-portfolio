@@ -1,5 +1,7 @@
 import { ArrowDown, Github, Linkedin, Mail } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import MovingDotsBackground from "./MovingDotsBackground";
+
 
 const socialLinks = [
   {
@@ -19,10 +21,10 @@ const socialLinks = [
   },
 ];
 
-const HeroSection = () => {
-  return (
-    <section className="min-h-screen flex items-center justify-center relative overflow-hidden bg-gradient-to-br from-[#1e293b] via-[#334155] to-[#64748b]">
-      {/* Animated Gradient Blobs */}
+const HeroSection = () => (
+  <section className="min-h-screen flex items-center justify-center relative overflow-hidden">
+    <MovingDotsBackground />
+    {/* Animated Gradient Blobs */}
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute -top-20 -left-32 w-[400px] h-[400px] bg-gradient-to-tr from-primary/40 to-secondary/40 rounded-full blur-3xl opacity-70 animate-blob1"></div>
         <div className="absolute bottom-0 right-0 w-[300px] h-[300px] bg-gradient-to-br from-accent/30 to-primary/20 rounded-full blur-2xl opacity-60 animate-blob2"></div>
