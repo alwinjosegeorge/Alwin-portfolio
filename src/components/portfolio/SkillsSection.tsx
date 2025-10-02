@@ -81,7 +81,7 @@ const SkillsSection = () => {
             {/* Soft Skills & Certifications */}
             <div className="space-y-8">
               {/* Soft Skills (EFFECT ADDED) */}
-              <Card className="bg-card/50 border-secondary/20 green-glow hover:border-secondary/40 transition-all duration-300 hover:scale-105">
+              <Card className="bg-card/50 border-primary/20 hover:border-primary/40 transition-all duration-300 hover:scale-105 neon-glow">
                 <CardHeader>
                   <CardTitle className="text-xl text-secondary">Soft Skills</CardTitle>
                 </CardHeader>
@@ -101,7 +101,7 @@ const SkillsSection = () => {
               </Card>
 
               {/* Key Achievements (EFFECT ADDED) */}
-              <Card className="bg-card/50 border-accent/20 hover:border-accent/40 transition-all duration-300 hover:scale-105">
+              <Card className="bg-card/50 border-primary/20 hover:border-primary/40 transition-all duration-300 hover:scale-105 neon-glow">
                 <CardHeader>
                   <CardTitle className="text-xl text-accent">Key Achievements</CardTitle>
                 </CardHeader>
@@ -133,7 +133,7 @@ const SkillsSection = () => {
               </Card>
 
               {/* Currently Learning (EFFECT ADDED) */}
-              <Card className="bg-gradient-primary/10 border-primary/30 hover:border-primary/50 transition-all duration-300 hover:scale-105">
+              <Card className="bg-card/50 border-primary/20 hover:border-primary/40 transition-all duration-300 hover:scale-105 neon-glow">
                 <CardHeader>
                   <CardTitle className="text-xl text-primary">Currently Learning</CardTitle>
                 </CardHeader>
