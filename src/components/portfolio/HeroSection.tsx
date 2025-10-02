@@ -6,13 +6,13 @@ const HeroSection = () => {
     <section
       className="min-h-screen flex items-center relative"
       style={{
-        background: "linear-gradient(135deg, #111827 0%, #192b46 100%)",
+        background: "linear-gradient(135deg, #0a1836 0%, #192b46 100%)", // dark blue gradient
         overflow: "hidden",
       }}
     >
-      <div className="container mx-auto px-6 flex flex-col md:flex-row items-center justify-between relative z-10">
-        {/* Left Content */}
-        <div className="flex-1 flex flex-col justify-center items-start">
+      <div className="container mx-auto px-6 flex flex-row items-end justify-between relative z-10" style={{height: "100vh"}}>
+        {/* Left Content - shifted more to right */}
+        <div className="flex-1 flex flex-col justify-center items-start" style={{paddingLeft: "8vw", paddingBottom: "8vh"}}>
           <span className="text-base font-semibold text-white mb-4">HI, I'M ALWIN</span>
           <h1 className="text-4xl md:text-5xl font-extrabold text-white mb-4 leading-tight">
             I&apos;M A WEB<br />DESIGNER
@@ -31,31 +31,31 @@ const HeroSection = () => {
             <ArrowDown className="ml-2 w-5 h-5 animate-bounce" />
           </Button>
         </div>
-        {/* Right: Profile Image - positioned bottom right, spanning up */}
-        <div className="flex-1 flex justify-end items-end mt-10 md:mt-0 relative" style={{ minHeight: "500px" }}>
+        {/* Right: Profile Image - bottom left, not in a box, not zoomed */}
+        <div className="flex-1 flex items-end justify-end relative" style={{height: "100%"}}>
           <img
             src="/Alwin.png"
             alt="Alwin Jose George"
             className="object-contain"
             style={{
-              width: "400px",
+              width: "420px",
               height: "auto",
               position: "absolute",
-              right: 0,
-              bottom: 0,
+              left: "52%",
+              bottom: "0",
               zIndex: 10,
               filter: "drop-shadow(0 8px 32px rgba(0,0,0,0.37))"
             }}
           />
         </div>
       </div>
-      {/* Subtle radial effect for depth */}
+      {/* Optional: radial effect for depth */}
       <div
-        className="absolute right-0 bottom-0 pointer-events-none"
+        className="absolute left-0 bottom-0 pointer-events-none"
         style={{
           width: "600px",
           height: "600px",
-          background: "radial-gradient(circle at 80% 80%, rgba(0,97,255,0.15) 0%, rgba(25,43,70,0) 100%)",
+          background: "radial-gradient(circle at 30% 80%, rgba(0,97,255,0.18) 0%, rgba(25,43,70,0) 100%)",
           filter: "blur(20px)",
           zIndex: 1
         }}
