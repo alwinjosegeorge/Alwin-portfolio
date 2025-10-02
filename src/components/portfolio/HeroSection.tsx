@@ -45,7 +45,7 @@ const HeroSection = () => {
         <div className="flex-1 flex justify-center items-center mt-10 md:mt-0">
           <div className="w-80 h-80 flex items-center justify-center relative z-10">
             <img
-              src="./src/components/portfolio/alwin.png"
+              src="/src/components/portfolio/alwin.png"
               alt="Alwin Jose George"
               className="object-contain w-full h-full"
               style={{
