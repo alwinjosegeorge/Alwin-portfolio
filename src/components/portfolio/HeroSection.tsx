@@ -53,7 +53,7 @@ const HeroSection = () => {
             >
               <Mail className="w-5 h-5" />
             </Button>
-            <Button
+            <Button 
               variant="outline"
               size="icon"
               className="rounded-full border-primary/50 hover:border-primary hover:bg-primary/10 neon-glow transition-all duration-300"
