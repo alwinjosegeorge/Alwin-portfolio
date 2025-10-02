@@ -39,7 +39,7 @@ const ExperienceSection = () => {
       description: "Participated in a hackathon to develop an AI-powered sustainable travel platform. Collaborated with team members, managed project timeline, and presented to judges.",
       skills: ["Team Collaboration", "Project Management", "AI/ML", "Full-Stack Development", "Presentation"],
       icon: Award,
-      color: "accent"
+      color: "primary"
     },
     {
       id: 4,
@@ -51,7 +51,7 @@ const ExperienceSection = () => {
       description: "Hands-on AI project experience covering artificial intelligence, data science, and Python programming. Participated in workshops, quizzes, and contributed to real-world AI/data science project tasks.",
       skills: ["Artificial Intelligence", "Data Science", "Python Programming", "Problem Solving", "Teamwork"],
       icon: Code,
-      color: "accent",
+      color: "primary",
       certificates: [
         "https://media.licdn.com/dms/image/v2/D4E22AQHKmRKGnyyAcg/feedshare-shrink_800/B4EZgn9lm6HgAk-/0/1753017116788?e=1761782400&v=beta&t=bWfEQPxUC5el-eIcAPVcoFEa3AKamWU21hbyY_ChowE",
         "https://media.licdn.com/dms/image/v2/D4E22AQFX1wabVmLXDA/feedshare-shrink_800/B4EZgn.faoGYAg-/0/1753017356859?e=1761782400&v=beta&t=9N6vp4t-nQ3bJNyyO2gTxsSSfYC_Rv6yfoEMJtayCm0",
@@ -219,7 +219,7 @@ const ExperienceSection = () => {
 
             {/* Achievements Sidebar */}
             <div className="space-y-6">
-              <Card className="bg-card/50 border-primary/20 neon-glow">
+              <Card className="bg-card/50 border-primary/20 hover:border-primary/40 transition-all duration-300 hover:scale-105 neon-glow">
                 <CardHeader>
                   <CardTitle className="text-xl text-primary">Key Achievements</CardTitle>
                 </CardHeader>
@@ -241,7 +241,7 @@ const ExperienceSection = () => {
               </Card>
 
               {/* Leadership Roles */}
-              <Card className="bg-card/50 border-secondary/20 green-glow">
+              <Card className="bg-card/50 border-primary/20 hover:border-primary/40 transition-all duration-300 hover:scale-105 neon-glow">
                 <CardHeader>
                   <CardTitle className="text-xl text-secondary">Leadership</CardTitle>
                 </CardHeader>
@@ -273,7 +273,7 @@ const ExperienceSection = () => {
               </Card>
 
               {/* Future Goals */}
-              <Card className="bg-gradient-primary/10 border-primary/30">
+              <Card className="bg-card/50 border-primary/20 hover:border-primary/40 transition-all duration-300 hover:scale-105 neon-glow">
                 <CardHeader>
                   <CardTitle className="text-xl text-primary">Future Goals</CardTitle>
                 </CardHeader>
