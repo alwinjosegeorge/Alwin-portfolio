@@ -118,7 +118,8 @@ const Navigation = () => {
       </nav>
 
       {/* Floating Navigation Dots (Desktop) */}
-      <div className="fixed right-8 top-1/2 transform -translate-y-1/2 z-40 hidden lg:block">
+      
+      {/* <div className="fixed right-8 top-1/2 transform -translate-y-1/2 z-40 hidden lg:block">
         <div className="space-y-4">
           {navItems.map((item) => (
             <button
@@ -141,7 +142,7 @@ const Navigation = () => {
           ))}
         </div>
       </div>
-
+      */}
       {/* Scroll to Top Button */}
       <Button
         variant="outline"
