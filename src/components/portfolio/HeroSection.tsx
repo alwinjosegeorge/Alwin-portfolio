@@ -1,6 +1,5 @@
 import { ArrowDown, Github, Linkedin, Mail } from "lucide-react";
 import { Button } from "@/components/ui/button";
-
 const HeroSection = () => {
   return (
     <section className="min-h-screen flex items-center justify-center relative overflow-hidden animated-bg">
