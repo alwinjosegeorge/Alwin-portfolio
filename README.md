@@ -137,5 +137,7 @@ A hackathon project designed to assist colour-blind individuals by providing rea
 I'm always open to discussing new projects, collaborations, or opportunities. Feel free to reach out via email or connect with me on LinkedIn or GitHub.
 
 ---
-
+<div align="center">
+  <img width="868px" src="https://github-readme-activity-graph.vercel.app/graph?username=alwinjosegeorge/Alwin-portfolio&theme=react-dark" alt="Alwin Jose George"/>
+</div>
 
