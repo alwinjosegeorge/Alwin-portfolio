@@ -8,13 +8,13 @@ const SkillsSection = () => {
     { name: "Python", level: 88, category: "Programming" },
     { name: "C/C++", level: 85, category: "Programming" },
     { name: "JavaScript", level: 60, category: "Programming" },
-    { name: "React", level: 68, category: "Programming" },
-    { name: "Node.js", level: 60, category: "Programming" },
-    { name: "Machine Learning", level: 50, category: "AI/ML" },
+    { name: "React", level: 35, category: "Programming" },
+    { name: "Node.js", level: 38, category: "Programming" },
+    { name: "Machine Learning", level: 40, category: "AI/ML" },
     { name: "Computer Vision", level: 70, category: "AI/ML" },
     { name: "Image Processing", level: 90, category: "AI/ML" },
-    { name: "SQL", level: 70, category: "Database" },
-    { name: "Git", level: 85, category: "Tools" }
+    { name: "SQL", level: 60, category: "Database" },
+    { name: "Visual Studio Code", level: 85, category: "Tools" }
   ];
 
   const softSkills = [
